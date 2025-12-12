@@ -231,14 +231,14 @@ const Home: React.FC = () => {
           </div>
 
           {/* Scrollable Container */}
-          <div className="flex overflow-x-auto pb-12 gap-6 md:gap-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth">
+          <div className="flex overflow-x-auto pb-12 gap-4 sm:gap-6 md:gap-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth">
             {featuredProperties.map((prop) => (
               <div
                 key={prop.id}
-                className="min-w-[300px] md:min-w-[350px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
+                className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
               >
                 {/* Image */}
-                <div className="h-[350px] md:h-[400px] overflow-hidden relative">
+                <div className="h-[280px] sm:h-[320px] md:h-[400px] overflow-hidden relative">
                   <img
                     src={prop.image}
                     alt={prop.title}
