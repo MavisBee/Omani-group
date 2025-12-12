@@ -5,8 +5,8 @@ import {
   Mail,
   MessageCircle,
   Instagram,
-  Facebook,
-  Linkedin,
+  X,
+  TrendingUp,
   Building,
 } from "lucide-react";
 
@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all duration-300"
               >
-                <Facebook className="w-4 h-4" />
+                <X className="w-4 h-4" />
               </a>
               <a
                 href="http://www.tiktok.com/@omani_group"
@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-accent hover:text-white transition-all duration-300"
               >
-                <Linkedin className="w-4 h-4" />
+                <TrendingUp className="w-4 h-4" />
               </a>
             </div>
             <div className="mt-8 pt-8 border-t border-slate-800">
