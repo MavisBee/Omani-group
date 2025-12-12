@@ -1,0 +1,12 @@
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+}
+
+/* Minimal styles — Tailwind is loaded via CDN in index.html */
+body {
+  background-color: white;
+}
