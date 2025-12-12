@@ -191,7 +191,7 @@ const Home: React.FC = () => {
       <section className="py-16 md:py-24 lg:py-32 bg-white relative overflow-hidden">
         <div className="hidden md:block absolute top-0 right-0 w-1/3 h-full bg-slate-50 skew-x-12 translate-x-32 z-0"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl ml-0 px-6 md:mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-20 border-b border-slate-100 pb-8">
             <div className="max-w-xl">
               <span className="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-3 block">
@@ -251,7 +251,7 @@ const Home: React.FC = () => {
 
       {/* Discover Next Home - Scrollable Property List */}
       <section className="py-16 md:py-24 lg:py-32 bg-slate-900 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl ml-0 px-6 md:mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
               <span className="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-4 block">
@@ -269,17 +269,17 @@ const Home: React.FC = () => {
           </div>
 
           {/* Scrollable Container */}
-            <div
-              ref={scrollRef}
-              className="property-scroll flex overflow-x-auto pb-12 gap-4 sm:gap-6 md:gap-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth"
-            >
-              {featuredProperties.map((prop) => (
-                <div
-                  key={prop.id}
-                  className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
-                >
-                  {/* Image */}
-                  <div className="h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden relative">
+          <div
+            ref={scrollRef}
+            className="property-scroll flex overflow-x-auto pb-12 gap-4 sm:gap-6 md:gap-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth"
+          >
+            {featuredProperties.map((prop) => (
+              <div
+                key={prop.id}
+                className="min-w-full sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
+              >
+                {/* Image */}
+                <div className="h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden relative">
                   <img
                     src={prop.image}
                     alt={prop.title}
@@ -328,7 +328,8 @@ const Home: React.FC = () => {
                   if (!el) return;
                   const child = el.children[i] as HTMLElement | undefined;
                   if (!child) return;
-                  const left = child.offsetLeft - (el.clientWidth - child.clientWidth) / 2;
+                  const left =
+                    child.offsetLeft - (el.clientWidth - child.clientWidth) / 2;
                   el.scrollTo({ left, behavior: "smooth" });
                 }}
                 aria-label={`Go to property ${i + 1}`}
@@ -355,7 +356,7 @@ const Home: React.FC = () => {
 
       {/* Our Projects Section */}
       <section className="py-16 md:py-24 lg:py-32 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl ml-0 px-6 md:mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16">
             <div className="mb-6 md:mb-0">
               <p className="text-accent uppercase tracking-[0.2em] text-xs font-bold mb-3">

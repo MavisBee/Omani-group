@@ -84,33 +84,33 @@ const Footer: React.FC = () => {
             <ul className="space-y-6 text-sm text-slate-400 font-light">
               <li>
                 <a
-                  href="tel:+2348000000000"
+                  href="tel:+2349030952295"
                   className="flex items-center gap-4 group cursor-pointer"
                 >
                   <div className="p-2 border border-slate-700 rounded-full group-hover:border-accent transition-colors">
                     <Phone className="w-4 h-4 text-accent" />
                   </div>
                   <span className="group-hover:text-white transition-colors">
-                    +234 (800) 000-0000
+                    +234 903 095 2295
                   </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:nwaokorieamuchenna@gmail.com"
+                  href="mailto:info@omanigroup.com"
                   className="flex items-center gap-4 group cursor-pointer"
                 >
                   <div className="p-2 border border-slate-700 rounded-full group-hover:border-accent transition-colors">
                     <Mail className="w-4 h-4 text-accent" />
                   </div>
                   <span className="group-hover:text-white transition-colors break-all">
-                    nwaokorieamuchenna@gmail.com
+                    info@omanigroup.com
                   </span>
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/2348000000000"
+                  href="https://wa.me/2349014917836"
                   className="flex items-center gap-4 group cursor-pointer"
                 >
                   <div className="p-2 border border-slate-700 rounded-full group-hover:border-accent transition-colors">
