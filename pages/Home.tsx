@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   ShieldCheck,
   Star,
@@ -99,6 +99,44 @@ const projects = [
 ];
 
 const Home: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    let raf = 0 as number | undefined;
+
+    const onScroll = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const children = Array.from(el.children).filter(
+          (c) => c instanceof HTMLElement
+        ) as HTMLElement[];
+        if (children.length === 0) return;
+        const center = el.scrollLeft + el.clientWidth / 2;
+        let best = 0;
+        let bestDiff = Infinity;
+        children.forEach((child, idx) => {
+          const rectCenter = child.offsetLeft + child.clientWidth / 2;
+          const diff = Math.abs(rectCenter - center);
+          if (diff < bestDiff) {
+            best = idx;
+            bestDiff = diff;
+          }
+        });
+        setActiveIndex(best);
+      });
+    };
+
+    el.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -231,14 +269,17 @@ const Home: React.FC = () => {
           </div>
 
           {/* Scrollable Container */}
-          <div className="flex overflow-x-auto pb-12 gap-4 sm:gap-6 md:gap-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth">
-            {featuredProperties.map((prop) => (
-              <div
-                key={prop.id}
-                className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
-              >
-                {/* Image */}
-                <div className="h-[280px] sm:h-[320px] md:h-[400px] overflow-hidden relative">
+            <div
+              ref={scrollRef}
+              className="property-scroll flex overflow-x-auto pb-12 gap-4 sm:gap-6 md:gap-8 snap-x snap-mandatory scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth"
+            >
+              {featuredProperties.map((prop) => (
+                <div
+                  key={prop.id}
+                  className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
+                >
+                  {/* Image */}
+                  <div className="h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden relative">
                   <img
                     src={prop.image}
                     alt={prop.title}
@@ -274,6 +315,30 @@ const Home: React.FC = () => {
                   </p>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Scroll dots (mobile hint) */}
+          <div className="flex justify-center items-center gap-2 mt-4 md:mt-6">
+            {featuredProperties.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => {
+                  const el = scrollRef.current;
+                  if (!el) return;
+                  const child = el.children[i] as HTMLElement | undefined;
+                  if (!child) return;
+                  const left = child.offsetLeft - (el.clientWidth - child.clientWidth) / 2;
+                  el.scrollTo({ left, behavior: "smooth" });
+                }}
+                aria-label={`Go to property ${i + 1}`}
+                className={
+                  "rounded-full transition-all " +
+                  (i === activeIndex
+                    ? "w-3 h-3 bg-accent"
+                    : "w-2 h-2 bg-white/40")
+                }
+              />
             ))}
           </div>
 
