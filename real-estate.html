@@ -41,7 +41,7 @@
           href="index.html"
           class="font-serif text-2xl tracking-widest font-bold flex items-center gap-2 transition-colors duration-300 text-primary"
         >
-          <img src="assets/images/Omani 1.png" alt="Omani Group Logo" class="w-8 h-8">
+          <img src="assets/images/Omani1.png" alt="Omani Group Logo" class="w-8 h-8">
           OMANI GROUP
         </a>
 
@@ -149,7 +149,7 @@
         <div
           class="flex flex-col sm:flex-row gap-6 animate-fade-in-up delay-300 w-full sm:w-auto px-6"
         >
-          <a href="#properties" class="w-full sm:w-auto">
+          <a href="contact.html" class="w-full sm:w-auto">
             <button
               class="w-full sm:min-w-[200px] bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-slate-100 transition-colors"
             >
@@ -310,11 +310,10 @@
 
     <!-- Featured Properties -->
     <section
-      id="properties"
       class="py-16 md:py-24 lg:py-32 bg-slate-900 text-white overflow-hidden"
     >
       <div class="max-w-7xl ml-0 px-6 md:mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 relative">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
           <div>
             <span
               class="text-accent text-xs font-bold uppercase tracking-[0.2em] mb-4 block"
@@ -326,7 +325,7 @@
             </h2>
             <div class="w-20 h-0.5 bg-accent"></div>
           </div>
-          <div class="hidden md:flex gap-2 text-slate-400 text-sm items-center sticky top-4 z-10">
+          <div class="hidden md:flex gap-2 text-slate-400 text-sm items-center">
             <span>Scroll to explore</span>
             <svg
               class="w-4 h-4 animate-pulse"
@@ -345,10 +344,12 @@
         </div>
 
         <!-- Property Cards Container -->
-        <div class="flex overflow-x-auto gap-4 md:gap-6 pb-4 snap-x snap-mandatory">
+        <div
+          class="property-scroll flex overflow-x-auto pb-12 gap-4 sm:gap-6 md:gap-8 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 scroll-smooth"
+        >
           <!-- Property Card 1 -->
           <div
-            class="min-w-[18rem] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group bg-white shadow-sm hover:shadow-xl transition-all duration-300 rounded-sm cursor-pointer overflow-hidden shrink-0"
+            class="min-w-full sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group bg-white p-4 shadow-sm hover:shadow-xl transition-all duration-300 rounded-sm cursor-pointer shrink-0"
           >
             <div class="relative h-64 overflow-hidden mb-6 rounded-sm">
               <img
@@ -365,27 +366,25 @@
                 >
               </div>
             </div>
-            <div class="px-4 pb-4">
-              <div
-                class="flex items-center gap-3 text-xs text-accent uppercase tracking-widest font-bold mb-3"
-              >
-                <span>Luxury Residential</span>
-              </div>
-              <h3
-                class="text-xl font-serif text-primary leading-snug group-hover:text-accent transition-colors duration-300"
-              >
-                Banana Island Waterfront Villa
-              </h3>
-              <p class="text-slate-500 text-sm mt-2 flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                Ikoyi, Lagos
-              </p>
+            <div
+              class="flex items-center gap-3 text-xs text-accent uppercase tracking-widest font-bold mb-3"
+            >
+              <span>Luxury Residential</span>
             </div>
+            <h3
+              class="text-xl font-serif text-primary leading-snug group-hover:text-accent transition-colors duration-300"
+            >
+              Banana Island Waterfront Villa
+            </h3>
+            <p class="text-slate-500 text-sm mt-2 flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+              Ikoyi, Lagos
+            </p>
           </div>
 
           <!-- Property Card 2 -->
           <div
-            class="min-w-[18rem] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
+            class="min-w-full sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
           >
             <div
               class="h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden relative"
@@ -430,7 +429,7 @@
 
           <!-- Property Card 3 -->
           <div
-            class="min-w-[18rem] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
+            class="min-w-full sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
           >
             <div
               class="h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden relative"
@@ -474,7 +473,7 @@
           </div>
           <!-- Property Card 4 -->
           <div
-            class="min-w-[18rem] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
+            class="min-w-full sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
           >
             <div
               class="h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden relative"
@@ -518,7 +517,7 @@
           </div>
           <!-- Property Card 5 -->
           <div
-            class="min-w-[18rem] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
+            class="min-w-full sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
           >
             <div
               class="h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden relative"
@@ -562,7 +561,7 @@
           </div>
           <!-- Property Card 6 -->
           <div
-            class="min-w-[18rem] sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
+            class="min-w-full sm:min-w-[320px] md:min-w-[350px] lg:min-w-[380px] snap-center group relative overflow-hidden cursor-pointer rounded-sm bg-slate-800 shrink-0"
           >
             <div
               class="h-[320px] sm:h-[360px] md:h-[400px] overflow-hidden relative"
