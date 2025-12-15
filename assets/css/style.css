@@ -1,0 +1,252 @@
+/* Omani Group Styles */
+:root {
+  --primary: #0f172a;
+  --accent: #d97706;
+  --accent-light: #f59e0b;
+  --neutral: #f8fafc;
+}
+
+/* Smooth scrolling for the whole document */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Utility to hide scrollbar for horizontal scrolling sections */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--accent);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+  color: white;
+  padding: 120px 0;
+}
+
+/* Service cards grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+}
+
+/* Scroll Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s ease-out;
+}
+
+.scale-in.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Enhanced Navigation Animation */
+.nav-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::before {
+  width: 100%;
+}
+
+/* Mobile Menu Enhanced Animation */
+.mobile-menu-enter {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.mobile-menu-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+
+.mobile-menu-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mobile-menu-exit-active {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+/* Staggered animation for menu items */
+.mobile-menu-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.3s ease-out forwards;
+}
+
+.mobile-menu-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.mobile-menu-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.mobile-menu-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Parallax effect for hero sections */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* Hover effects for service cards */
+.service-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  color: var(--accent);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease, transform 0.3s ease;
+}
